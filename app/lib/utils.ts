@@ -1,3 +1,4 @@
+import { type } from 'os';
 import { Revenue } from './definitions';
 
 export const formatCurrency = (amount: number) => {
@@ -38,8 +39,12 @@ export const generateYAxis = (revenue: Revenue[]) => {
 export const generatePagination = (currentPage: number, totalPages: number) => {
   // If the total number of pages is 7 or less,
   // display all pages without any ellipsis.
-  if (totalPages <= 7) {
-    return Array.from({ length: totalPages }, (_, i) => i + 1);
+  // const totalPages = totalPage.value;
+  if (totalPages.value <= 7) {
+    // if(currentPage >= totalPages.value || currentPage <= 1) {
+
+    // }
+    return Array.from({ length: totalPages.value }, (_, i) => i + 1);
   }
 
   // If the current page is among the first 3 pages,
